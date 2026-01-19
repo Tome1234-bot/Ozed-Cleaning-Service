@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ozed Cleaning Services - Professional cleaning solutions for homes and businesses">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Ozed Cleaning Services | Professional Cleaning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  /* Base Styles & Variables - Updated to blue/black gradients */
+:root {
+  --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  --secondary-gradient: linear-gradient(135deg, #2a5298 0%, #1a1a2e 100%);
+  --accent-blue: #2a5298;
+  --light-blue: #4d7cff;
+  --dark-color: #1a1a2e;
+  --medium-dark: #2a2a4a;
+  --text-color: #333;
+  --text-light: #666;
+  --white: #fff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-blue);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--light-blue);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--accent-blue);
+  border: 2px solid var(--accent-blue);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-blue);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.btn-large {
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.section-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+  font-weight: 800;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.main-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  padding: 15px 0;
+  transition: var(--transition);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dark-color);
+}
+
+.logo-highlight {
+  color: var(--accent-blue);
+}
+
+.main-nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 30px;
+}
+
+.nav-link {
+  color: var(--dark-color);
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-link.active {
+  color: var(--accent-blue);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gradient);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.phone-number {
+  font-weight: 600;
+  color: var(--accent-blue);
+  white-space: nowrap;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  cursor: pointer;
+}
+
+        
+        /* Hero section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 50vh;
+            padding: 10px 20px;
+            background: rgb(255, 255, 255);
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* Flex containers */
+        .hero-flex1 {
+            flex: 1;
+            min-width: 300px;
+            max-width: 650px;
+        }
+        
+        .hero-flex2 {
+            flex: 1;
+            min-width: 300px;
+            max-width: 670px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Hero text content */
+        .hero-flex1 h1 {
+            font-size: 1.5rem;
+            color: #1a365d;
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+        
+        /* Hero list */
+        .hero-list {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .hero-list i {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            color: #2d7dd2;
+            gap: 10px;
+            background: rgb(255, 255, 255);
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #2d7dd2;
+        }
+        
+        .hero-list i:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-text {
+            font-size: 1.2rem;
+            color: #2d3748;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin: 0;
+        }
+        
+        /* Button container */
+        .hero-btns {
+            margin-top: 20px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px 16px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(45, 125, 210, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #2d7dd2 0%, #1a5ca3 100%);
+            color: rgb(0, 0, 0);
+        }
+        
+        .btn-large {
+            padding: 20px 10px;
+            font-size: 1.2rem;
+        }
+        
+        .btn i {
+            font-size: 1rem;
+        }
+        
+        /* Image container */
+        .hero-flex2 img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+/* Trust Section */
+.trust-section {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+
+
+.trust-rating {
+  background: rgb(244, 244, 247);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+}
+
+.rating-stars {
+  color: #FFD700;
+  font-size: .8rem;
+  margin: 5px;
+}
+
+.rating-stars i {
+  background: black;
+  border-radius: 3px;
+  padding: 5px;
+}
+.rating-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.rating-count {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Navigation Tabs */
+        .services-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            gap: 10px;
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .tab {
+            padding: 12px 24px;
+            background-color: #f1f5f9;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            color: #475569;
+        }
+        
+        .tab:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        
+        .tab.active {
+            background-color: #3498db;
+            color: white;
+            border-color: #2980b9;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+/* How It Works Section */
+.how-it-works {
+  padding: 100px 0;
+  background-color: var(--light-gray);
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 70px;
+}
+
+.step-card {
+  background-color: var(--white);
+  padding: 40px 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--primary-gradient);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.step-icon {
+  font-size: 3rem;
+  color: var(--accent-blue);
+  margin-bottom: 20px;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+  font-weight: 700;
+}
+
+.step-description {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature-icon {
+  color: var(--accent-blue);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-weight: 500;
+}
+
+.certification {
+  margin-top: 60px;
+  padding: 30px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.cert-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+  font-weight: 700;
+}
+
+.cert-badges {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cert-badge {
+  background: var(--medium-gray);
+  padding: 15px 25px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  color: var(--dark-color);
+  min-width: 180px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 100px 0;
+  background-color: var(--white);
+}
+
+.testimonials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--medium-gray);
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.author-info p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.testimonial-rating {
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+.testimonial-text {
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.testimonial-text::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 3rem;
+  color: var(--light-blue);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.read-more {
+  color: var(--accent-blue);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.read-more:hover {
+  color: var(--light-blue);
+}
+
+/* Footer */
+.main-footer {
+  background: var(--dark-color);
+  color: var(--white);
+  padding: 70px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-col {
+  padding: 0 10px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.footer-logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.footer-about {
+  color: #bdc3c7;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border-radius: 50%;
+  transition: var(--transition);
+  font-size: 1.1rem;
+}
+
+.social-icon:hover {
+  background-color: var(--light-blue);
+  transform: translateY(-3px);
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #bdc3c7;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a:hover {
+  color: var(--light-blue);
+  padding-left: 5px;
+}
+
+.footer-contact li {
+  margin-bottom: 18px;
+  color: #bdc3c7;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-contact i {
+  color: var(--light-blue);
+  margin-top: 3px;
+  font-size: 1.1rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-legal a {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+.footer-legal a:hover {
+  color: var(--light-blue);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .trust-container {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .steps-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: var(--white);
+    flex-direction: column;
+    transition: all 0.4s ease;
+    padding: 40px 0;
+    box-shadow: var(--box-shadow-hover);
+    z-index: 999;
+    overflow-y: auto;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .nav-item {
+    margin: 15px 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .testimonials-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 80px 10px;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+  
+  .hero-features {
+    gap: 25px;
+  }
+  
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-btns .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .services-grid, .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-logos {
+    justify-content: center;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-col {
+    margin-bottom: 30px;
+  }
+}
+</style>
+
+<body>
+    
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" alt="CareConnect Logo" class="logo-img">
+                    <a href="index.php" class="logo-text">Ozed<span class="logo-highlight">CleaningServices</span></a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="service.html" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="contact.php" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="contact.php" class="nav-link">Premium Feature</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="login.php" class="btn btn-primary">Book Now</a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     <section id="home" class="hero">
+        <div class="hero-flex1">
+          <h1>Over 100 services for your home and garden!</h1>
+          <div class="hero-list">
+           <i class="fas fa-calendar-check"><p class="icon-text">7 days-a-week availability</p></i> 
+          <i class="fas fa-clock"><p class="icon-text">Trained specialists</p></i>
+                </a>
+          <i class="fas fa-clock"><p class="icon-text">Instant booking</p></i>
+                </a>
+        </div>
+
+        <div class="hero-btns">
+                <a href="services.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-search"></i> Check Prices & Availability
+                </a>
+        </div>
+        <div class="trust-section">
+                    <div class="trust-rating">
+                      <h3>Excellent</h3>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>over 47,000 reviews on <strong>Trustpilot</strong></p>
+                    </div>
+              
+                  </div>
+        
+        </div>
+
+        <div class="hero-flex2">
+          <img src="images/Brand.png" alt="">
+        </div>
+    </section>
+
+    <section class="services-tabs">
+            <div class="tab active" data-category="cleaning" href="">Cleaning Services</div>
+            <div class="tab" data-category="gardening">Gardening</div>
+            <div class="tab" data-category="removals">Removals & Storage</div>
+            <div class="tab" data-category="handyman">Handyman</div>
+            <div class="tab" data-category="plumbing">Plumbing & Heating</div>
+            <div class="tab" data-category="gas">Gas & Boiler Services</div>
+            <div class="tab" data-category="electrical">Electrical Services</div>
+            <div class="tab" data-category="pest">Pest Control</div>
+            <div class="tab" data-category="waste">Waste Removal</div>
+            <div class="tab" data-category="christmas">Christmas Trees</div>
+    </section>
+        
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Ozed Cleaning Services Works</h2>
+                <p class="section-subtitle">Simple, convenient, and designed around your schedule</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="step-title">Customise & Book</h3>
+                    <p class="step-description">Just specify a few details, pick the date and time, we'll send the right professional.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="step-title">Manage Everything Online</h3>
+                    <p class="step-description">Check prices and availability, re-schedule, re-book or cancel your service any time you like.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="step-title">Enjoy Your Newfound Time!</h3>
+                    <p class="step-description">Rest, work, play, live... while the professional takes care of everything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+
+       <div class="hero-flex1">
+          <h1>Over 100 services for your home and garden!</h1>
+          <div class="hero-list">
+           <i class="fas fa-bolt feature-icon"><p class="icon-text">Same- & next-day visits</p></i> 
+          <i class="fas fa-calendar-alt feature-icon"><p class="icon-text">7 days-a-week availability</p></i>
+          <i class="fas fa-pound-sign feature-icon"><p class="icon-text">Fixed price & instant no-obligation quotes</p></i>
+          <i class="fas fa-user-shield feature-icon"><p class="icon-text">Dedicated & insured service specialists</p></i>
+          <i class="fas fa-file-contract feature-icon"><p class="icon-text">No contracts for regular services</p></i>
+          <i class="fas fa-tasks feature-icon"><p class="icon-text">Easily manage your bookings online</p></i>
+          <i class="fas fa-crown feature-icon"><p class="icon-text">Extra perks with the Ozed Club</p></i>
+        </div>
+
+        <div class="trust-section">
+                    <div class="trust-rating">
+                      <h3>Excellent</h3>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>over 47,000 reviews on <strong>Trustpilot</strong></p>
+                    </div>
+              
+                  </div>
+        
+        </div>
+            <div class="hero-flex2">
+          <img src="images/people.jpg" alt="">
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <div>
+                    <h2 class="section-title">What Clients Are Saying...</h2>
+                </div>
+                <div class="trust-rating">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="rating-text">Excellent</div>
+                    <div class="rating-count">over 47,000 reviews on <strong>Trustpilot</strong></div>
+                </div>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Andrew Thorburn" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Andrew Thorburn</h4>
+                                <p>End of Tenancy Cleaning</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        Amazing service, above and beyond. I used them for an end of tenancy clean, and they did a fantastic job. It turned out to be bigger than expected, but they remained professional, and bent over backwards to make sure I got what I wanted...
+                    </div>
+                    <a href="#" class="read-more">Read more <i class="fas fa-chevron-right"></i></a>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jasmine Pengelly" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Jasmine Pengelly</h4>
+                                <p>Gardening Services</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        Far exceeded my expectations - my gardeners were professional, friendly and found time to do my front garden as well as my back! I could not be more impressed with how they handled the job. I will certainly be using them again...
+                    </div>
+                    <a href="#" class="read-more">Read more <i class="fas fa-chevron-right"></i></a>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Diana Farragher" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Diana Farragher</h4>
+                                <p>Carpet Cleaning</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        Service with a smile. Punctuality, phone call on arrival, cheerful welcome. Very helpful and they did a very thorough job. My carpets are cleaner than I thought possible so job exceeded expectations. Thank You...
+                    </div>
+                    <a href="#" class="read-more">Read more <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Ozed Cleaning Services Logo" class="footer-logo-img">
+                        <span class="footer-logo-text">Ozed<span class="logo-highlight">CleaningServices</span></span>
+                    </div>
+                    <p class="footer-about">Professional cleaning and home services with vetted specialists, available 7 days a week. We deliver exceptional results with a satisfaction guarantee.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cleaning Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Gardening</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Removals & Storage</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Electrical Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Plumbing and Heating</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Pest Control</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#how-it-works"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Reviews</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> London, United Kingdom</li>
+                        <li><i class="fas fa-phone-alt"></i> 020 4586 0445</li>
+                        <li><i class="fas fa-envelope"></i> info@ozedcleaningservices.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 7AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Ozed Cleaning Services. All Rights Reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mainNav = document.querySelector('.main-nav');
+  
+  mobileMenuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('active');
+    this.classList.toggle('fa-times');
+    this.classList.toggle('fa-bars');
+  });
+  
+  // Close mobile menu when clicking on a nav link
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (mainNav.classList.contains('active')) {
+        mainNav.classList.remove('active');
+        mobileMenuToggle.classList.remove('fa-times');
+        mobileMenuToggle.classList.add('fa-bars');
+      }
+    });
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      if(this.getAttribute('href') === '#') return;
+      
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        const headerHeight = document.querySelector('.main-header').offsetHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        if (mainNav.classList.contains('active')) {
+          mainNav.classList.remove('active');
+          mobileMenuToggle.classList.remove('fa-times');
+          mobileMenuToggle.classList.add('fa-bars');
+        }
+      }
+    });
+  });
+  
+  // Add a scroll effect to the header
+  const header = document.querySelector('.main-header');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+      header.style.padding = '10px 0';
+    } else {
+      header.style.boxShadow = 'var(--box-shadow)';
+      header.style.padding = '15px 0';
+    }
+  });
+  
+  // Simple form validation for demo purposes
+  const contactLinks = document.querySelectorAll('a[href="#contact"]');
+  contactLinks.forEach(link => {
+    if (!link.getAttribute('href').includes('tel:')) {
+      link.addEventListener('click', function(e) {
+        // In a real application, this would show a contact form modal
+        // For demo, we'll just scroll to the contact banner
+        if (this.getAttribute('href') === '#contact') {
+          return; // Let the smooth scroll handle it
+        }
+      });
+    }
+  });
+  
+  // Add animation to step cards on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  // Observe step cards for animation
+  const stepCards = document.querySelectorAll('.step-card');
+  stepCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(card);
+  });
+  
+  // Observe service cards for animation
+  const serviceCards = document.querySelectorAll('.service-card');
+  serviceCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+    observer.observe(card);
+  });
+});
+    </script>
+</body>
+</html>

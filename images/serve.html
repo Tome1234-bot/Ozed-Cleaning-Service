@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Deals Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .service-deals-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card.has-deal:after {
+            content: "SPECIAL";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 5px 35px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 25px;
+            height: 100%;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .deal-tag {
+            display: inline-block;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+        }
+        
+        .no-deal {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        .service-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #eee;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .service-footer i {
+            color: #3498db;
+        }
+        
+        /* Different icon colors for categories */
+        .cleaning .service-icon { background-color: #3498db; }
+        .gardening .service-icon { background-color: #2ecc71; }
+        .removals .service-icon { background-color: #e67e22; }
+        .electrical .service-icon { background-color: #f1c40f; }
+        .plumbing .service-icon { background-color: #9b59b6; }
+        .trades .service-icon { background-color: #1abc9c; }
+        .pest-control .service-icon { background-color: #e74c3c; }
+        .landscaping .service-icon { background-color: #27ae60; }
+        .locksmith .service-icon { background-color: #34495e; }
+        .waste-removal .service-icon { background-color: #d35400; }
+        .appliance-repair .service-icon { background-color: #16a085; }
+        .inventory .service-icon { background-color: #8e44ad; }
+        .dry-cleaning .service-icon { background-color: #2980b9; }
+        .car-services .service-icon { background-color: #c0392b; }
+        .christmas-trees .service-icon { background-color: #27ae60; }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .services-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-deals-section {
+                padding: 20px;
+            }
+            
+            .section-header h1 {
+                font-size: 2rem;
+            }
+            
+            .services-container {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 20px;
+            }
+            
+            .service-link {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Animation for deal cards */
+        @keyframes pulse {
+            0% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+            50% { box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3); }
+            100% { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); }
+        }
+        
+        .service-card.has-deal {
+            animation: pulse 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <section class="service-deals-section">
+        <div class="section-header">
+            <h1>Exclusive Service Deals</h1>
+            <p>Discover special offers on essential home and business services. Click on any service to learn more about our current deals and book online.</p>
+        </div>
+        
+        <div class="services-container">
+            <!-- Cleaning Service -->
+            <div class="service-card has-deal cleaning">
+                <a href="#cleaning" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="service-title">Cleaning</h3>
+                    <div class="deal-tag">DEAL AVAILABLE</div>
+                    <p class="service-footer">
+                        <span>Click to view offer</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Gardening Service -->
+            <div class="service-card has-deal gardening">
+                <a href="#gardening" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="service-title">Gardening</h3>
+                    <div class="deal-tag">DEAL AVAILABLE</div>
+                    <p class="service-footer">
+                        <span>Click to view offer</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Removals & Storage Service -->
+            <div class="service-card has-deal removals">
+                <a href="#removals" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h3 class="service-title">Removals & Storage</h3>
+                    <div class="deal-tag">DEAL AVAILABLE</div>
+                    <p class="service-footer">
+                        <span>Click to view offer</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Electrical Services -->
+            <div class="service-card has-deal electrical">
+                <a href="#electrical" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="service-title">Electrical Services</h3>
+                    <div class="deal-tag">DEAL AVAILABLE</div>
+                    <p class="service-footer">
+                        <span>Click to view offer</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Plumbing and Heating -->
+            <div class="service-card plumbing">
+                <a href="#plumbing" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3 class="service-title">Plumbing and Heating</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Gas & Boiler Services -->
+            <div class="service-card plumbing">
+                <a href="#gas-boiler" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="service-title">GAS & Boiler Services</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Trades and Odd Jobs -->
+            <div class="service-card trades">
+                <a href="#trades" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Trades and Odd Jobs</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Pest Control -->
+            <div class="service-card pest-control">
+                <a href="#pest-control" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3 class="service-title">Pest Control</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Landscaping -->
+            <div class="service-card landscaping">
+                <a href="#landscaping" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="service-title">Landscaping</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Locksmith -->
+            <div class="service-card locksmith">
+                <a href="#locksmith" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="service-title">Locksmith</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Waste Removal -->
+            <div class="service-card waste-removal">
+                <a href="#waste-removal" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3 class="service-title">Waste Removal</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Appliance Repair -->
+            <div class="service-card appliance-repair">
+                <a href="#appliance-repair" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-toolbox"></i>
+                    </div>
+                    <h3 class="service-title">Appliance Repair</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Inventory Services -->
+            <div class="service-card has-deal inventory">
+                <a href="#inventory" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="service-title">Inventory Services</h3>
+                    <div class="deal-tag">DEAL AVAILABLE</div>
+                    <p class="service-footer">
+                        <span>Click to view offer</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Dry Cleaning & Laundry -->
+            <div class="service-card dry-cleaning">
+                <a href="#dry-cleaning" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 class="service-title">Dry Cleaning & Laundry</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Mobile Car Services -->
+            <div class="service-card car-services">
+                <a href="#car-services" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="service-title">Mobile Car Services</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+            
+            <!-- Christmas Trees -->
+            <div class="service-card christmas-trees">
+                <a href="#christmas-trees" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="service-title">Christmas Trees</h3>
+                    <p class="no-deal">No current deals</p>
+                    <p class="service-footer">
+                        <span>View services</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </p>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Demo content for anchor links -->
+        <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 0.9rem; text-align: center;">
+            <p><strong>Note:</strong> This is a demonstration. The service links would navigate to detailed service pages with offers.</p>
+            <p>Services with <span class="deal-tag" style="padding: 4px 10px; font-size: 0.8rem; display: inline-block;">DEAL AVAILABLE</span> tags have special offers.</p>
+        </div>
+    </section>
+
+    <script>
+        // Simple interaction for demonstration
+        document.querySelectorAll('.service-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // In a real application, this would navigate to the service page
+                // For demo, we'll just show an alert
+                const serviceName = this.querySelector('.service-title').textContent;
+                const hasDeal = this.parentElement.classList.contains('has-deal');
+                
+                if(hasDeal) {
+                    alert(`Navigating to ${serviceName} with special deals!`);
+                } else {
+                    alert(`Navigating to ${serviceName} page.`);
+                }
+                
+                // In a real implementation, we wouldn't prevent default
+                // e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
