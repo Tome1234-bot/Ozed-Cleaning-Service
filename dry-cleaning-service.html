@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="dry-cleaning">
@@ -43,7 +49,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Dry Cleaning & Laundry" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -55,7 +61,6 @@
                 </div>
             </div>
         </div>
-    </header>
     </header>
 
     <section id="home" class="hero">
@@ -85,7 +90,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Dry Cleaning & Laundry" data-subcategory="General Inquiry">
                     <i class="fas fa-calendar-check" aria-hidden="true"></i>
                     <span>Schedule Free Pickup Today</span>
                 </a>
@@ -124,7 +129,7 @@
                         <div class="service-content">
                             <h3>SUIT & FORMAL WEAR CLEANING</h3>
                             <p>Expert dry cleaning for suits, blazers, dress pants, and formal wear. We use specialized techniques to preserve shape, color, and fabric quality.</p>
-                            <a href="suit-cleaning.html" class="service-btn">Order Now</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Suit & Formal Wear Cleaning">Order Now</a>
                         </div>
                     </div>
 
@@ -135,7 +140,7 @@
                         <div class="service-content">
                             <h3>WEDDING & BRIDAL GOWN CARE</h3>
                             <p>Specialized cleaning and preservation for wedding dresses, bridesmaid dresses, and formal gowns. We handle delicate fabrics with expert care.</p>
-                            <a href="wedding-dress.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Wedding & Bridal Gown Care">Order Now</a>
                         </div>
                     </div>
 
@@ -146,7 +151,7 @@
                         <div class="service-content">
                             <h3>DESIGNER & DELICATE FABRICS</h3>
                             <p>Special care for silk, cashmere, wool, leather, and other delicate fabrics. We follow manufacturer guidelines for premium garment preservation.</p>
-                            <a href="designer-cleaning.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Designer & Delicate Fabrics">Schedule Service</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +168,7 @@
                         <div class="service-content">
                             <h3>WASH & FOLD LAUNDRY SERVICE</h3>
                             <p>Professional wash, dry, and fold service for everyday clothing, towels, and linens. We separate colors, use quality detergents, and fold neatly.</p>
-                            <a href="wash-fold.html" class="service-btn">Order Service</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Wash & Fold Laundry Service">Order Service</a>
                         </div>
                     </div>
 
@@ -174,7 +179,7 @@
                         <div class="service-content">
                             <h3>PROFESSIONAL PRESSING & IRONING</h3>
                             <p>Expert pressing and ironing services for shirts, pants, dresses, and table linens. We achieve crisp, professional results every time.</p>
-                            <a href="ironing.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Professional Pressing & Ironing">Get Now</a>
                         </div>
                     </div>
 
@@ -185,7 +190,7 @@
                         <div class="service-content">
                             <h3>HOUSEHOLD LINEN SERVICE</h3>
                             <p>Cleaning for bedding, comforters, blankets, curtains, and tablecloths. We handle oversized items with our commercial equipment.</p>
-                            <a href="linen-service.html" class="service-btn">Schedule Now</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Household Linen Service">Schedule Now</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +207,7 @@
                         <div class="service-content">
                             <h3>EXPERT STAIN REMOVAL</h3>
                             <p>Specialized treatment for tough stains including wine, grease, ink, blood, and food stains. We use professional-grade stain removal techniques.</p>
-                            <a href="stain-removal.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Expert Stain Removal">Book Now</a>
                         </div>
                     </div>
 
@@ -213,7 +218,7 @@
                         <div class="service-content">
                             <h3>ALTERATIONS & REPAIRS</h3>
                             <p>Professional tailoring services including hemming, taking in/out, button replacement, and minor repairs to extend your clothing's life.</p>
-                            <a href="alterations.html" class="service-btn">View Services</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Alterations & Repairs">Shedule Service</a>
                         </div>
                     </div>
 
@@ -224,7 +229,7 @@
                         <div class="service-content">
                             <h3>SUBSCRIPTION LAUNDRY PLANS</h3>
                             <p>Convenient weekly or monthly subscription plans for regular laundry and dry cleaning needs. Save time and money with our bundled services.</p>
-                            <a href="subscription.html" class="service-btn">View Plans</a>
+                            <a href="form.html" class="service-btn" data-category="Dry Cleaning & Laundry" data-subcategory="Subscription Laundry Plans">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -232,6 +237,79 @@
         </div>
     </section>
 
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
