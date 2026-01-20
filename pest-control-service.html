@@ -3,309 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obad Cleaning Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Shield Pest Control</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #007BFF;
-            --secondary-color: #0056b3;
-            --text-color: #333;
-            --border-color: #ccc;
-            --background-color: #f4f4f9;
-            --white: #ffffff;
-            --error-color: #dc3545;
-            --success-color: #28a745;
-            --info-color: #17a2b8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: rgb(205, 231, 255);
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2rem;
-        }
-
-        h3 {
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 1.5rem;
-            color: var(--text-color);
-        }
-
-        h4 {
-            color: var(--primary-color);
-            margin: 25px 0 15px;
-            font-size: 1.2rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 6px;
-            color: var(--text-color);
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="date"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-        }
-
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .checkbox-group,
-        .radio-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 10px 0;
-        }
-
-        .checkbox-group label,
-        .radio-group label {
-            font-weight: normal;
-            margin-left: 5px;
-        }
-
-        .input-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        button {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.3s ease;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background: var(--secondary-color);
-        }
-
-        button:disabled {
-            background: #cccccc;
-            cursor: not-allowed;
-        }
-
-        .error {
-            color: var(--error-color);
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
-        }
-
-        /* Form Grid Layout */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                max-width: 100%;
-                margin: 20px;
-                padding: 20px;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Postal Code Specific Styles */
-        .postal-code-wrapper {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 5px;
-        }
-        
-        .postal-code-wrapper .form-control {
-            flex: 1;
-        }
-        
-        .postal-code-wrapper .btn {
-            width: auto;
-            padding: 10px 20px;
-            margin-top: 0;
-            white-space: nowrap;
-        }
-        
-        .error-message {
-            color: var(--error-color);
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        .success-message {
-            color: var(--success-color);
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        .postal-code-info {
-            background-color: #e8f4fd;
-            border-left: 4px solid var(--info-color);
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            display: none;
-        }
-        
-        .postal-code-info i {
-            color: var(--info-color);
-            margin-right: 8px;
-        }
-        
-        .postal-code-warning {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            display: none;
-        }
-        
-        .postal-code-warning i {
-            color: #ffc107;
-            margin-right: 8px;
-        }
-        
-        .required {
-            color: var(--error-color);
-            margin-left: 4px;
-        }
-        
-        .alert-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .alert-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .alert-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            transform: translateY(-20px);
-            transition: transform 0.3s ease;
-        }
-        
-        .alert-overlay.active .alert-box {
-            transform: translateY(0);
-        }
-        
-        .alert-icon {
-            font-size: 3rem;
-            color: #2ecc71;
-            margin-bottom: 1rem;
-        }
-        
-        .alert-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-        
-        .alert-message {
-            margin-bottom: 1.5rem;
-            color: #7f8c8d;
-        }
-        
-        .alert-button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .alert-button:hover {
-            background: #2980b9;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-        <header class="main-header">
+
+
+<body class="pest-control">
+    <header class="main-header">
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
@@ -347,301 +57,181 @@
             </div>
         </div>
     </header>
-    <div class="alert-overlay" id="successAlert">
-        <div class="alert-box">
-            <div class="alert-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h3 class="alert-title">Success!</h3>
-            <p class="alert-message">Your message has been submitted successfully. We'll get back to you soon.</p>
-            <button class="alert-button" onclick="closeAlert()">OK</button>
-        </div>
-    </div>
-    
-<div class="container">
-    <h2>Obed Cleaning Service</h2>
-    <h3>Book Us Today</h3>
-    <form id="clientForm" novalidate action="form.php" method="POST">
-        <div class="form-group">
-            <label>Date:</label>
-            <input type="text" id="date" name="date" readonly>
-        </div>
 
-        <h4>Section 1: Personal Information</h4>
-        <div class="form-grid">
-            <div class="form-group">
-                <label>Full Name: <span class="required">*</span></label>
-                <input type="text" name="fullName" id="fullName" required>
-                <div class="error" id="fullNameError">Please enter your full name</div>
-            </div>
+    <section id="home" class="hero">
+        <div class="hero-flex1">
+            <h1>Professional Pest Control Solutions for a Pest-Free Home & Business</h1>
+            <ul class="hero-list">
+                <li class="hero-item"> 
+                    <i class="fas fa-shield-alt"></i> 
+                    <span class="icon-text">24/7 Emergency pest removal services</span> 
+                </li>
+                <li class="hero-item"> 
+                    <i class="fas fa-user-check"></i> 
+                    <span class="icon-text">Licensed & certified pest control technicians</span> 
+                </li>
+                <li class="hero-item">
+                    <i class="fas fa-leaf"></i>
+                    <span class="icon-text">Eco-friendly & pet-safe treatment options</span> 
+                </li>
+                <li class="hero-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span class="icon-text">Guaranteed results with follow-up treatments</span> 
+                </li>
+                <li class="hero-item">
+                    <i class="fas fa-home"></i>
+                    <span class="icon-text">Residential & commercial pest control services</span> 
+                </li>
+            </ul>
 
-            <div class="form-group">
-                <label>Email: <span class="required">*</span></label>
-                <input type="email" name="email" id="email" required>
-                <div class="error" id="emailError">Please enter a valid email address</div>
+            <div class="hero-btns">
+                <a href="services.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    <span>Schedule Free Inspection Today</span>
+                </a>
             </div>
-        </div>
-
-        <!-- Postal Code Section -->
-        <div class="form-group">
-            <label for="postalCode">Bexley, London Postal Code <span class="required">*</span></label>
-            <div class="postal-code-wrapper">
-                <input type="text" id="postalCode" name="postalCode" class="form-control" placeholder="e.g., DA5, DA6, DA7, DA14, DA15, DA16, DA17" required>
-                <button type="button" class="btn btn-primary" id="verifyPostal">Verify</button>
-            </div>
-            <div class="error-message" id="postalError">Invalid Postal Code. Please enter a valid Bexley, London postal code (DA5-DA7, DA14-DA17).</div>
-            <div class="success-message" id="postalSuccess">Bexley Postal Code Verified!</div>
-            <div class="postal-code-warning" id="postalWarning"></div>
-            <div class="postal-code-info" id="postalInfo"></div>
-            <small style="display: block; margin-top: 5px; color: #666;">
-                Acceptable formats: DA5 1AB, DA6 7HJ, DA14 5PQ, DA15 8LT, etc.
-            </small>
-        </div>
-
-        <h4>Section 2: Service Category</h4>
-        <div class="form-grid">
-            <div class="form-group" id="categoryForm">
-                <label for="category">Category: <span class="required">*</span></label>
-                <input type="text" id="category" name="category" required>
-            </div>
-
-            <div class="form-group" id="subcategoryForm">
-                <label for="subcategory">Sub-category:</label>
-                <input type="text" id="subcategory" name="subcategory">
+            
+            <div class="trust-section">
+                <div class="trust-rating">
+                    <h3>Trusted Protection</h3>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>4.8/5 from <strong>3,200+ satisfied customers</strong></p>
+                </div>
             </div>
         </div>
 
-        <button type="submit" name="submitBtn" id="submitBtn">Submit Form</button>
-    </form>
-</div>
+        <div class="hero-flex2">
+            <img src="https://images.unsplash.com/photo-1622065266427-6af6d8c64f70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600" alt="Professional pest control technician at work">
+        </div>
+    </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('clientForm');
-        const dateInput = document.getElementById('date');
-        const submitBtn = document.getElementById('submitBtn');
-        
-        // Postal Code Elements
-        const postalInput = document.getElementById('postalCode');
-        const verifyPostalBtn = document.getElementById('verifyPostal');
-        const postalError = document.getElementById('postalError');
-        const postalSuccess = document.getElementById('postalSuccess');
-        const postalWarning = document.getElementById('postalWarning');
-        const postalInfo = document.getElementById('postalInfo');
-        
-        // Store booking state
-        const bookingState = {
-            postalCode: null,
-            verified: false
-        };
+    <section class="services-grid">
+        <div class="service-categories">
+            <!-- Residential Pest Control -->
+            <div class="service-category">
+                <h2 class="category-title">Residential Pest Control</h2>
+                <div class="services-wrapper">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="General Pest Control">
+                        </div>
+                        <div class="service-content">
+                            <h3>GENERAL PEST CONTROL</h3>
+                            <p>Comprehensive treatment for common household pests including ants, spiders, cockroaches, silverfish, and earwigs. Regular maintenance plans available.</p>
+                            <a href="general-pest.html" class="service-btn">Get Quote</a>
+                        </div>
+                    </div>
 
-        // Set current date
-        dateInput.value = new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1593069567131-53a0614dde1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Rodent Control">
+                        </div>
+                        <div class="service-content">
+                            <h3>RODENT CONTROL & EXCLUSION</h3>
+                            <p>Professional rodent removal, trapping, and exclusion services to eliminate mice and rats and prevent future infestations with guaranteed results.</p>
+                            <a href="rodent-control.html" class="service-btn">Schedule Service</a>
+                        </div>
+                    </div>
 
-        // ----- BEXLEY, LONDON POSTAL CODE VALIDATION -----
-        function validateBexleyPostal(code) {
-            // Clean the code: remove spaces, convert to uppercase
-            const cleanCode = code.toUpperCase().replace(/\s/g, '');
-            
-            // Bexley, London postal codes start with DA5, DA6, DA7, DA14, DA15, DA16, DA17
-            // Valid formats: DA5 1AB, DA6 7HJ, DA14 5PQ, etc.
-            const bexleyPostalRegex = /^(DA5|DA6|DA7|DA14|DA15|DA16|DA17)\s*[0-9][A-Z]{2}$/i;
-            
-            return bexleyPostalRegex.test(code);
-        }
-        
-        function getBexleyAreaInfo(postalCode) {
-            const cleanCode = postalCode.toUpperCase().replace(/\s/g, '');
-            const areaPrefix = cleanCode.substring(0, 3); // Get DA5, DA6, etc
-            
-            const areaInfo = {
-                'DA5': { name: 'Bexley/Albany Park', description: 'North Bexley area' },
-                'DA6': { name: 'Bexleyheath', description: 'Town centre area' },
-                'DA7': { name: 'Bexleyheath/Barnehurst', description: 'East Bexleyheath' },
-                'DA14': { name: 'Sidcup', description: 'South Bexley area' },
-                'DA15': { name: 'Sidcup/Blackfen', description: 'West Sidcup area' },
-                'DA16': { name: 'Welling', description: 'Central Bexley area' },
-                'DA17': { name: 'Belvedere', description: 'Thames riverside area' }
-            };
-            
-            return areaInfo[areaPrefix] || { name: 'Bexley, London', description: 'London Borough of Bexley' };
-        }
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Bed Bug Treatment">
+                        </div>
+                        <div class="service-content">
+                            <h3>BED BUG TREATMENT</h3>
+                            <p>Effective bed bug elimination using heat treatment, chemical applications, and follow-up inspections. Complete eradication guaranteed.</p>
+                            <a href="bed-bugs.html" class="service-btn">Emergency Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        verifyPostalBtn.addEventListener('click', () => {
-            const code = postalInput.value.trim();
-            const postalCodeInput = postalInput.closest('.form-group').querySelector('input');
+            <!-- Commercial & Specialty Services -->
+            <div class="service-category">
+                <h2 class="category-title">Commercial & Specialty Services</h2>
+                <div class="services-wrapper">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Commercial Pest Control">
+                        </div>
+                        <div class="service-content">
+                            <h3>COMMERCIAL PEST CONTROL</h3>
+                            <p>Customized pest management programs for restaurants, offices, warehouses, and retail spaces. Compliance with health and safety regulations.</p>
+                            <a href="commercial.html" class="service-btn">Business Solutions</a>
+                        </div>
+                    </div>
 
-            // Hide all messages
-            postalError.style.display = 'none';
-            postalSuccess.style.display = 'none';
-            postalWarning.style.display = 'none';
-            postalInfo.style.display = 'none';
-            
-            // Remove previous validation styles
-            postalCodeInput.style.borderColor = '';
-            postalCodeInput.style.boxShadow = '';
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1593069567131-53a0614dde1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Termite Control">
+                        </div>
+                        <div class="service-content">
+                            <h3>TERMITE INSPECTION & CONTROL</h3>
+                            <p>Comprehensive termite inspections, baiting systems, liquid treatments, and preventive measures to protect your property from structural damage.</p>
+                            <a href="termites.html" class="service-btn">Free Inspection</a>
+                        </div>
+                    </div>
 
-            if (!code) {
-                postalError.textContent = 'Please enter a postal code';
-                postalError.style.display = 'block';
-                postalCodeInput.style.borderColor = 'var(--error-color)';
-                postalCodeInput.focus();
-                return;
-            }
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Mosquito Control">
+                        </div>
+                        <div class="service-content">
+                            <h3>MOSQUITO & FLY CONTROL</h3>
+                            <p>Seasonal mosquito and fly control treatments for yards, patios, and outdoor living areas. Enjoy your outdoor space pest-free.</p>
+                            <a href="mosquito-control.html" class="service-btn">Seasonal Protection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            if (!validateBexleyPostal(code)) {
-                postalError.textContent = 'Invalid Postal Code. Please enter a valid Bexley, London postal code (DA5-DA7, DA14-DA17).';
-                postalError.style.display = 'block';
-                postalCodeInput.style.borderColor = 'var(--error-color)';
-                postalCodeInput.focus();
-                bookingState.verified = false;
-                
-                // Check if it's a London code but not Bexley
-                const londonRegex = /^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$/i;
-                if (londonRegex.test(code) && !code.toUpperCase().startsWith('DA')) {
-                    postalWarning.innerHTML = `
-                        <i class="fas fa-exclamation-triangle"></i>
-                        This is a London postal code but not in Bexley. We currently only serve the London Borough of Bexley.
-                    `;
-                    postalWarning.style.display = 'block';
-                }
-                return;
-            }
+            <!-- Prevention & Maintenance -->
+            <div class="service-category">
+                <h2 class="category-title">Prevention & Maintenance</h2>
+                <div class="services-wrapper">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Preventive Treatments">
+                        </div>
+                        <div class="service-content">
+                            <h3>PREVENTIVE TREATMENTS</h3>
+                            <p>Regular maintenance programs to prevent pest infestations before they start. Quarterly, bi-annual, and annual plans available for complete protection.</p>
+                            <a href="preventive.html" class="service-btn">View Plans</a>
+                        </div>
+                    </div>
 
-            // Validation successful - Bexley postal code
-            bookingState.postalCode = code.toUpperCase();
-            bookingState.verified = true;
-            
-            postalSuccess.style.display = 'block';
-            postalCodeInput.style.borderColor = 'var(--success-color)';
-            postalCodeInput.style.boxShadow = '0 0 5px rgba(40, 167, 69, 0.3)';
-            
-            // Get area information
-            const areaInfo = getBexleyAreaInfo(code);
-            
-            // Show service availability info
-            postalInfo.innerHTML = `
-                <i class="fas fa-map-marker-alt"></i>
-                <strong>${areaInfo.name}</strong> - ${areaInfo.description}<br>
-                <small>Postal Code: ${bookingState.postalCode.replace(/(DA\d{1,2})(\d[A-Z]{2})/, '$1 $2')}</small>
-            `;
-            postalInfo.style.display = 'block';
-            
-            // Auto-hide success message after 5 seconds
-            setTimeout(() => {
-                postalSuccess.style.display = 'none';
-            }, 5000);
-        });
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Wildlife Removal">
+                        </div>
+                        <div class="service-content">
+                            <h3>WILDLIFE REMOVAL</h3>
+                            <p>Humane removal of raccoons, squirrels, bats, birds, and other wildlife from attics, crawl spaces, and other areas of your home or business.</p>
+                            <a href="wildlife.html" class="service-btn">Learn More</a>
+                        </div>
+                    </div>
 
-        // Auto-format postal code as user types
-        postalInput.addEventListener('input', function(e) {
-            let value = this.value.toUpperCase().replace(/[^A-Z0-9\s]/g, '');
-            
-            // Auto-insert space after district code
-            if (value.length > 3 && !value.includes(' ')) {
-                const districtMatch = value.match(/^(DA\d{1,2})(\d[A-Z]{0,2})$/);
-                if (districtMatch) {
-                    value = districtMatch[1] + ' ' + districtMatch[2];
-                }
-            }
-            
-            this.value = value;
-            
-            // Clear validation states when user starts typing
-            if (bookingState.verified) {
-                bookingState.verified = false;
-                postalSuccess.style.display = 'none';
-                postalInfo.style.display = 'none';
-                postalInput.style.borderColor = '';
-                postalInput.style.boxShadow = '';
-            }
-        });
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1593069567131-53a0614dde1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Green Solutions">
+                        </div>
+                        <div class="service-content">
+                            <h3>GREEN PEST SOLUTIONS</h3>
+                            <p>Eco-friendly pest control options using natural, organic, and low-toxicity products that are safe for children, pets, and the environment.</p>
+                            <a href="green-solutions.html" class="service-btn">Eco Options</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Auto-validate on Enter key in postal code field
-        postalInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                verifyPostalBtn.click();
-            }
-        });
-
-        // Form submission validation
-        form.addEventListener('submit', (e) => {
-            let isValid = true;
-            
-            // Check required fields
-            const requiredFields = form.querySelectorAll('[required]');
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.borderColor = 'var(--error-color)';
-                    
-                    // Show error message if available
-                    const errorDiv = field.closest('.form-group').querySelector('.error');
-                    if (errorDiv) {
-                        errorDiv.style.display = 'block';
-                    }
-                }
-            });
-            
-            // Check if postal code is verified
-            if (!bookingState.verified) {
-                isValid = false;
-                postalError.textContent = 'Please verify your Bexley postal code before submitting';
-                postalError.style.display = 'block';
-                postalInput.style.borderColor = 'var(--error-color)';
-                postalInput.focus();
-            }
-            
-            if (!isValid) {
-                e.preventDefault();
-                // Show alert for invalid form
-                alert('Please fill all required fields and verify your Bexley postal code before submitting.');
-            } else {
-                // Form is valid, you can proceed with submission
-                console.log('Form submitted with Bexley postal code:', bookingState.postalCode);
-            }
-        });
-
-        // When the page loads, check for stored values
-        window.addEventListener('load', function() {
-            // Get the form elements
-            const categoryInput = document.getElementById('category');
-            const subcategoryInput = document.getElementById('subcategory');
-            
-            // Get values from sessionStorage
-            const category = sessionStorage.getItem('category');
-            const subcategory = sessionStorage.getItem('subcategory');
-            
-            // Fill the form if values exist
-            if (category) {
-                categoryInput.value = category;
-            }
-            if (subcategory) {
-                subcategoryInput.value = subcategory;
-            }
-            
-            // Optional: Clear the stored values after use
-            sessionStorage.removeItem('category');
-            sessionStorage.removeItem('subcategory');
-        });
-        
-        // Show success alert if submission was successful
-        function closeAlert() {
-            document.getElementById('successAlert').classList.remove('active');
-        }
-        
-        // Close alert when clicking outside the box
-        document.getElementById('successAlert').addEventListener('click', function(e) {
-            if(e.target === this) {
-                closeAlert();
-            }
-        });
-    });
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
