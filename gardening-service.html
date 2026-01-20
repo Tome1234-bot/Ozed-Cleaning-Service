@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 
@@ -44,7 +50,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Gardening Services" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -85,7 +91,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Gardening Services" data-subcategory="Free Consultation">
                     <i class="fas fa-calendar-check" aria-hidden="true"></i>
                     <span>Book Your Free Consultation</span>
                 </a>
@@ -124,7 +130,7 @@
                         <div class="service-content">
                             <h3>CUSTOM GARDEN DESIGN</h3>
                             <p>Complete landscape design services tailored to your space, climate, and personal preferences. From concept to completion, we create beautiful, functional outdoor living areas.</p>
-                            <a href="form.html" class="service-btn">book now</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Custom Garden Design">Book Now</a>
                         </div>
                     </div>
 
@@ -135,7 +141,7 @@
                         <div class="service-content">
                             <h3>HARDSCAPING & PATIOS</h3>
                             <p>Professional installation of patios, walkways, retaining walls, and other structural elements that complement your garden's natural beauty.</p>
-                            <a href="form.html" class="service-btn">book now</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Hardscaping & Patios">Book Now</a>
                         </div>
                     </div>
 
@@ -146,7 +152,7 @@
                         <div class="service-content">
                             <h3>WATER FEATURES</h3>
                             <p>Design and installation of ponds, waterfalls, fountains, and irrigation systems that enhance your garden's ambiance and functionality.</p>
-                            <a href="form.html" class="service-btn">book now</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Water Features">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +169,7 @@
                         <div class="service-content">
                             <h3>LAWN CARE & MAINTENANCE</h3>
                             <p>Complete lawn services including mowing, edging, fertilization, aeration, and weed control to keep your grass healthy and vibrant year-round.</p>
-                            <a href="lawn-care.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Lawn Care & Maintenance">Schedule Service</a>
                         </div>
                     </div>
 
@@ -174,7 +180,7 @@
                         <div class="service-content">
                             <h3>PRUNING & TRIMMING</h3>
                             <p>Expert pruning of trees, shrubs, and hedges to promote healthy growth, maintain shape, and enhance the beauty of your landscape.</p>
-                            <a href="pruning.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Pruning & Trimming">Schedule Service</a>
                         </div>
                     </div>
 
@@ -185,7 +191,7 @@
                         <div class="service-content">
                             <h3>SEASONAL CLEANUP</h3>
                             <p>Spring and fall cleanup services including leaf removal, garden bed preparation, mulch installation, and winterization.</p>
-                            <a href="seasonal-cleanup.html" class="service-btn">Book Now</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Seasonal Cleanup">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +208,7 @@
                         <div class="service-content">
                             <h3>ORGANIC GARDENING</h3>
                             <p>Chemical-free gardening solutions using organic fertilizers, natural pest control, and sustainable practices for healthy plants and soil.</p>
-                            <a href="organic.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Organic Gardening">Order Service</a>
                         </div>
                     </div>
 
@@ -213,7 +219,7 @@
                         <div class="service-content">
                             <h3>VEGETABLE GARDENS</h3>
                             <p>Design, installation, and maintenance of productive vegetable gardens, raised beds, and edible landscapes for fresh homegrown produce.</p>
-                            <a href="vegetable-gardens.html" class="service-btn">Get Started</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Vegetable Gardens">Get Started</a>
                         </div>
                     </div>
 
@@ -224,13 +230,87 @@
                         <div class="service-content">
                             <h3>NATIVE PLANT GARDENS</h3>
                             <p>Creation of low-maintenance, water-wise gardens using native plants that thrive in your local climate and support local ecosystems.</p>
-                            <a href="native-plants.html" class="service-btn">View Options</a>
+                            <a href="form.html" class="service-btn" data-category="Gardening Services" data-subcategory="Native Plant Gardens">Book Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
