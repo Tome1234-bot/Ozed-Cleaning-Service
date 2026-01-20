@@ -11,10 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 
-<bod<header class="main-header">
+<body class="waste-removal">
+    <header class="main-header">
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
@@ -43,7 +50,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Waste Removal" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -84,7 +91,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Waste Removal" data-subcategory="General Pickup">
                     <i class="fas fa-calendar-check" aria-hidden="true"></i>
                     <span>Schedule Your Pickup Today</span>
                 </a>
@@ -123,7 +130,7 @@
                         <div class="service-content">
                             <h3>JUNK REMOVAL & HAULING</h3>
                             <p>Complete junk removal for furniture, appliances, electronics, and household items. We haul away anything you no longer need quickly and efficiently.</p>
-                            <a href="form.html" class="service-btn">Book now</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Junk Removal & Hauling">Book Now</a>
                         </div>
                     </div>
 
@@ -134,7 +141,7 @@
                         <div class="service-content">
                             <h3>YARD WASTE & DEBRIS REMOVAL</h3>
                             <p>Removal of branches, leaves, grass clippings, tree stumps, and landscaping debris. We handle both small yard cleanups and large-scale projects.</p>
-                            <a href="form.html" class="service-btn">Schedule Pickup</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Yard Waste & Debris Removal">Schedule Pickup</a>
                         </div>
                     </div>
 
@@ -145,7 +152,7 @@
                         <div class="service-content">
                             <h3>APPLIANCE & FURNITURE REMOVAL</h3>
                             <p>Professional removal of old appliances, furniture, mattresses, and exercise equipment. We ensure proper disposal and recycling when possible.</p>
-                            <a href="form.html" class="service-btn">Book Service</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Appliance & Furniture Removal">Book Service</a>
                         </div>
                     </div>
                 </div>
@@ -162,7 +169,7 @@
                         <div class="service-content">
                             <h3>CONSTRUCTION DEBRIS REMOVAL</h3>
                             <p>Removal of drywall, lumber, concrete, roofing materials, and other construction debris. We handle renovation and demolition waste efficiently.</p>
-                            <a href="construction-debris.html" class="service-btn">Commercial Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Construction Debris Removal">Commercial Quote</a>
                         </div>
                     </div>
 
@@ -173,7 +180,7 @@
                         <div class="service-content">
                             <h3>OFFICE & COMMERCIAL CLEANOUTS</h3>
                             <p>Complete cleanout services for offices, retail spaces, and commercial properties. We handle furniture, equipment, and general business waste.</p>
-                            <a href="office-cleanouts.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Office & Commercial Cleanouts">Schedule Service</a>
                         </div>
                     </div>
 
@@ -184,7 +191,7 @@
                         <div class="service-content">
                             <h3>DUMPSTER RENTAL SERVICES</h3>
                             <p>Convenient dumpster rentals in various sizes for residential and commercial projects. Flexible rental periods with delivery and pickup included.</p>
-                            <a href="dumpster-rental.html" class="service-btn">Rent Now</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Dumpster Rental Services">Rent Now</a>
                         </div>
                     </div>
                 </div>
@@ -201,7 +208,7 @@
                         <div class="service-content">
                             <h3>E-WASTE RECYCLING</h3>
                             <p>Responsible disposal of electronic waste including computers, TVs, monitors, and other electronics. We ensure data security and environmental compliance.</p>
-                            <a href="e-waste.html" class="service-btn">Schedule Pickup</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="E-Waste Recycling">Schedule Pickup</a>
                         </div>
                     </div>
 
@@ -212,7 +219,7 @@
                         <div class="service-content">
                             <h3>HOARDING CLEANUP SERVICES</h3>
                             <p>Compassionate and professional hoarding cleanup with respect for privacy and dignity. We handle sensitive situations with care and discretion.</p>
-                            <a href="hoarding-cleanup.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Hoarding Cleanup Services">Learn More</a>
                         </div>
                     </div>
 
@@ -223,13 +230,87 @@
                         <div class="service-content">
                             <h3>RECURRING WASTE REMOVAL</h3>
                             <p>Scheduled waste removal services for businesses, property managers, and homeowners. Weekly, bi-weekly, or monthly pickup options available.</p>
-                            <a href="recurring-services.html" class="service-btn">View Plans</a>
+                            <a href="form.html" class="service-btn" data-category="Waste Removal" data-subcategory="Recurring Waste Removal">View Plans</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
