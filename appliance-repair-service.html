@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="appliance-repair">
@@ -43,7 +49,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Appliance Repair" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -80,7 +86,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Appliance Repair" data-subcategory="General Inquiry">
                     <i class="fas fa-calendar-check" aria-hidden="true"></i>
                     <span>Schedule Your Repair Today</span>
                 </a>
@@ -119,7 +125,7 @@
                         <div class="service-content">
                             <h3>REFRIGERATOR REPAIR</h3>
                             <p>Expert repair for all refrigerator brands. We fix cooling issues, ice makers, water dispensers, compressors, and temperature control problems.</p>
-                            <a href="form.html" class="service-btn">Schedule Repair</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Refrigerator Repair">Schedule Repair</a>
                         </div>
                     </div>
 
@@ -130,7 +136,7 @@
                         <div class="service-content">
                             <h3>OVEN & STOVE REPAIR</h3>
                             <p>Gas and electric range repairs. We fix heating elements, igniters, temperature sensors, control panels, and all cooking surface issues.</p>
-                            <a href="form.html" class="service-btn">Schedule Repair</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Oven & Stove Repair">Schedule Repair</a>
                         </div>
                     </div>
 
@@ -141,7 +147,7 @@
                         <div class="service-content">
                             <h3>DISHWASHER REPAIR</h3>
                             <p>Comprehensive dishwasher service including pump repairs, drainage issues, spray arm problems, and door seal replacements.</p>
-                            <a href="form.html" class="service-btn">Schedule Repair</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Dishwasher Repair">Schedule Repair</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +164,7 @@
                         <div class="service-content">
                             <h3>WASHING MACHINE REPAIR</h3>
                             <p>Front-load and top-load washer repairs. We fix spin cycles, drainage problems, water inlet valves, and electronic control board issues.</p>
-                            <a href="form.html" class="service-btn">Schedule Repair</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Washing Machine Repair">Schedule Repair</a>
                         </div>
                     </div>
 
@@ -169,7 +175,7 @@
                         <div class="service-content">
                             <h3>DRYER REPAIR</h3>
                             <p>Gas and electric dryer service including heating element replacement, drum belt repairs, thermostat issues, and ventilation system cleaning.</p>
-                            <a href="form.html" class="service-btn">Schedule Repair</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Dryer Repair">Schedule Repair</a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +192,7 @@
                         <div class="service-content">
                             <h3>MICROWAVE REPAIR</h3>
                             <p>Over-the-range and countertop microwave repairs. We fix magnetron issues, door switches, control panels, and turntable mechanisms.</p>
-                            <a href="form.html" class="service-btn">Schedule Repair</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Microwave Repair">Schedule Repair</a>
                         </div>
                     </div>
 
@@ -197,7 +203,7 @@
                         <div class="service-content">
                             <h3>EMERGENCY REPAIR SERVICE</h3>
                             <p>24/7 emergency service for urgent appliance breakdowns. Fast response time with our on-call certified technicians.</p>
-                            <a href="form.html" class="service-btn">book Now</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Emergency Repair Service">Book Now</a>
                         </div>
                     </div>
 
@@ -208,7 +214,7 @@
                         <div class="service-content">
                             <h3>MAINTENANCE PLANS</h3>
                             <p>Preventative maintenance services to extend appliance lifespan and prevent costly breakdowns. Regular inspections and cleaning.</p>
-                            <a href="form.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Appliance Repair" data-subcategory="Maintenance Plans">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -216,6 +222,79 @@
         </div>
     </section>
 
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
