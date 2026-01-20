@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 
@@ -44,7 +50,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Electrical Services" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -85,7 +91,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Electrical Services" data-subcategory="Emergency Electrical Services">
                     <i class="fas fa-phone-alt" aria-hidden="true"></i>
                     <span>Call for Emergency Service</span>
                 </a>
@@ -124,7 +130,7 @@
                         <div class="service-content">
                             <h3>ELECTRICAL PANEL UPGRADES</h3>
                             <p>Professional electrical panel replacement and upgrades to meet modern power demands. We ensure code compliance and enhanced safety for your home.</p>
-                            <a href="panel-upgrade.html" class="service-btn">Get Estimate</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Electrical Panel Upgrades">Get Now</a>
                         </div>
                     </div>
 
@@ -135,7 +141,7 @@
                         <div class="service-content">
                             <h3>OUTLET & SWITCH INSTALLATION</h3>
                             <p>Installation of new outlets, switches, dimmers, and GFCI receptacles. We handle all wiring to ensure safety and proper functionality.</p>
-                            <a href="outlet-installation.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Outlet & Switch Installation">Schedule Service</a>
                         </div>
                     </div>
 
@@ -146,7 +152,7 @@
                         <div class="service-content">
                             <h3>LIGHTING INSTALLATION & REPAIR</h3>
                             <p>Installation of ceiling fans, chandeliers, recessed lighting, and outdoor lighting. We repair faulty lighting systems and ensure proper wiring.</p>
-                            <a href="lighting-installation.html" class="service-btn">Book Now</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Lighting Installation & Repair">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +169,7 @@
                         <div class="service-content">
                             <h3>COMMERCIAL ELECTRICAL SERVICES</h3>
                             <p>Complete electrical solutions for offices, retail spaces, and industrial facilities. We handle large-scale installations, maintenance, and upgrades.</p>
-                            <a href="commercial-electrical.html" class="service-btn">Business Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Commercial Electrical Services">Shedule Service</a>
                         </div>
                     </div>
 
@@ -174,7 +180,7 @@
                         <div class="service-content">
                             <h3>EMERGENCY ELECTRICAL REPAIRS</h3>
                             <p>24/7 emergency response for power outages, tripped breakers, sparking outlets, and other urgent electrical issues. Fast, safe solutions.</p>
-                            <a href="emergency-electrical.html" class="service-btn">Emergency Call</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Emergency Electrical Repairs">Book Now</a>
                         </div>
                     </div>
 
@@ -185,7 +191,7 @@
                         <div class="service-content">
                             <h3>GENERATOR INSTALLATION</h3>
                             <p>Professional installation of standby and portable generators with automatic transfer switches for uninterrupted power during outages.</p>
-                            <a href="generator-installation.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Generator Installation">Order Service</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +208,7 @@
                         <div class="service-content">
                             <h3>EV CHARGER INSTALLATION</h3>
                             <p>Professional installation of electric vehicle charging stations for homes and businesses. We ensure proper wiring and circuit capacity.</p>
-                            <a href="ev-charger.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="EV Charger Installation">Get Now</a>
                         </div>
                     </div>
 
@@ -213,7 +219,7 @@
                         <div class="service-content">
                             <h3>ELECTRICAL SAFETY INSPECTIONS</h3>
                             <p>Comprehensive electrical inspections for home purchases, insurance requirements, or safety concerns. We identify hazards and recommend solutions.</p>
-                            <a href="electrical-inspection.html" class="service-btn">Schedule Inspection</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Electrical Safety Inspections">Schedule Inspection</a>
                         </div>
                     </div>
 
@@ -224,7 +230,7 @@
                         <div class="service-content">
                             <h3>SMART HOME WIRING</h3>
                             <p>Installation of structured wiring for smart home systems, home theaters, security systems, and whole-house automation solutions.</p>
-                            <a href="smart-home-wiring.html" class="service-btn">View Services</a>
+                            <a href="form.html" class="service-btn" data-category="Electrical Services" data-subcategory="Smart Home Wiring">Order Service</a>
                         </div>
                     </div>
                 </div>
@@ -232,6 +238,79 @@
         </div>
     </section>
 
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
