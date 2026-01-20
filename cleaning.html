@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="regular-cleaning">
@@ -83,7 +89,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Cleaning" data-subcategory="General Inquiry">
                     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                     <span>Book Your Cleaning Today</span>
                 </a>
@@ -122,7 +128,7 @@
                         <div class="service-content">
                             <h3>REGULAR HOME CLEANING</h3>
                             <p>Comprehensive cleaning of your entire home including dusting, vacuuming, mopping, kitchen and bathroom sanitization, and trash removal.</p>
-                            <a href="form.html" class="service-btn">Book Now</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Regular Home Cleaning">Book Now</a>
                         </div>
                     </div>
 
@@ -133,7 +139,7 @@
                         <div class="service-content">
                             <h3>DEEP CLEANING SERVICE</h3>
                             <p>Intensive cleaning service that reaches every corner of your home. Includes baseboards, inside appliances, windows, and detailed sanitization.</p>
-                            <a href="form.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Deep Cleaning Service">Schedule Service</a>
                         </div>
                     </div>
 
@@ -144,7 +150,7 @@
                         <div class="service-content">
                             <h3>MOVE IN / MOVE OUT CLEANING</h3>
                             <p>Complete cleaning service for rental properties or homes being sold. Meets realtor and landlord standards for spotless presentation.</p>
-                            <a href="form.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Move In/Move Out Cleaning">Get Quote</a>
                         </div>
                     </div>
                 </div>
@@ -161,7 +167,7 @@
                         <div class="service-content">
                             <h3>OFFICE & COMMERCIAL CLEANING</h3>
                             <p>Professional cleaning for offices, retail spaces, and commercial buildings. Daily, weekly, or after-hours cleaning schedules available.</p>
-                            <a href="office-cleaning.html" class="service-btn">Business Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Office & Commercial Cleaning">Business Quote</a>
                         </div>
                     </div>
 
@@ -172,7 +178,7 @@
                         <div class="service-content">
                             <h3>CARPET & UPHOLSTERY CLEANING</h3>
                             <p>Professional steam cleaning for carpets, rugs, and upholstered furniture. Removes deep-set dirt, stains, and allergens for a fresh, clean space.</p>
-                            <a href="carpet-cleaning.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Carpet & Upholstery Cleaning">Schedule Service</a>
                         </div>
                     </div>
 
@@ -183,7 +189,7 @@
                         <div class="service-content">
                             <h3>WINDOW & GLASS CLEANING</h3>
                             <p>Streak-free window cleaning for both interior and exterior surfaces. Professional equipment and techniques for crystal-clear results.</p>
-                            <a href="window-cleaning.html" class="service-btn">Book Service</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Window & Glass Cleaning">Book Service</a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +206,7 @@
                         <div class="service-content">
                             <h3>RECURRING CLEANING PLANS</h3>
                             <p>Weekly, bi-weekly, or monthly cleaning schedules to keep your space consistently clean. Save time and enjoy ongoing spotless results.</p>
-                            <a href="recurring-plans.html" class="service-btn">View Plans</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Recurring Cleaning Plans">View Plans</a>
                         </div>
                     </div>
 
@@ -211,7 +217,7 @@
                         <div class="service-content">
                             <h3>POST-CONSTRUCTION CLEANING</h3>
                             <p>Specialized cleaning after renovations or construction projects. Removes dust, debris, and construction residue for a move-in ready space.</p>
-                            <a href="post-construction.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Post-Construction Cleaning">Get Quote</a>
                         </div>
                     </div>
 
@@ -222,13 +228,72 @@
                         <div class="service-content">
                             <h3>GREEN CLEANING SERVICES</h3>
                             <p>Eco-friendly cleaning using non-toxic, biodegradable products that are safe for children, pets, and the environment while being highly effective.</p>
-                            <a href="green-cleaning.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Cleaning" data-subcategory="Green Cleaning Services">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Also handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle (keep your existing functionality)
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+
+       </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
