@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body class="car-repair">
@@ -43,7 +49,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Car Services" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -84,7 +90,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Car Services" data-subcategory="General Inquiry">
                     <i class="fas fa-calendar-check" aria-hidden="true"></i>
                     <span>Schedule Your Service Now</span>
                 </a>
@@ -123,7 +129,7 @@
                         <div class="service-content">
                             <h3>OIL CHANGE & LUBRICATION</h3>
                             <p>Complete oil change service with premium synthetic or conventional oil, oil filter replacement, and multi-point vehicle inspection.</p>
-                            <a href="form.html" class="service-btn">Book Now</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Oil Change & Lubrication">Book Now</a>
                         </div>
                     </div>
 
@@ -134,7 +140,7 @@
                         <div class="service-content">
                             <h3>BRAKE INSPECTION & REPAIR</h3>
                             <p>Comprehensive brake inspection, pad/shoe replacement, rotor resurfacing, brake fluid flush, and complete brake system service.</p>
-                            <a href="form.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Brake Inspection & Repair">Schedule Service</a>
                         </div>
                     </div>
 
@@ -145,7 +151,7 @@
                         <div class="service-content">
                             <h3>TIRE SERVICES & ROTATION</h3>
                             <p>Tire rotation, balancing, alignment, pressure checks, and replacement. We carry all major tire brands for optimal performance and safety.</p>
-                            <a href="form.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Tire Services & Rotation">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -162,7 +168,7 @@
                         <div class="service-content">
                             <h3>ENGINE DIAGNOSTICS & REPAIR</h3>
                             <p>Advanced engine diagnostics, tune-ups, sensor replacement, timing belt service, and complete engine repair for optimal performance.</p>
-                            <a href="form.html" class="service-btn">Schedule Now</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Engine Diagnostics & Repair">Schedule Now</a>
                         </div>
                     </div>
 
@@ -173,7 +179,7 @@
                         <div class="service-content">
                             <h3>TRANSMISSION SERVICES</h3>
                             <p>Automatic and manual transmission repair, fluid flush, clutch replacement, and transmission rebuild services for smooth shifting.</p>
-                            <a href="form.html" class="service-btn">Get Estimate</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Transmission Services">Get Now</a>
                         </div>
                     </div>
 
@@ -184,7 +190,7 @@
                         <div class="service-content">
                             <h3>ELECTRICAL SYSTEM REPAIR</h3>
                             <p>Battery testing/replacement, alternator repair, starter service, wiring diagnostics, and complete electrical system troubleshooting.</p>
-                            <a href="form.html" class="service-btn">Book Service</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Electrical System Repair">Book Service</a>
                         </div>
                     </div>
                 </div>
@@ -201,7 +207,7 @@
                         <div class="service-content">
                             <h3>A/C & HEATING SERVICES</h3>
                             <p>Complete air conditioning service including refrigerant recharge, compressor repair, heater core service, and climate control diagnostics.</p>
-                            <a href="form.html" class="service-btn">Schedule Now</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="A/C & Heating Services">Schedule Now</a>
                         </div>
                     </div>
 
@@ -212,7 +218,7 @@
                         <div class="service-content">
                             <h3>SUSPENSION & STEERING</h3>
                             <p>Shock/strut replacement, alignment services, steering rack repair, ball joint replacement, and complete suspension system service.</p>
-                            <a href="form.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Suspension & Steering">Get Now</a>
                         </div>
                     </div>
 
@@ -223,7 +229,7 @@
                         <div class="service-content">
                             <h3>MAINTENANCE PACKAGES</h3>
                             <p>Cost-effective maintenance packages for regular service intervals. Keep your vehicle running smoothly with our scheduled maintenance plans.</p>
-                            <a href="maintenance-packages.html" class="service-btn">View Packages</a>
+                            <a href="form.html" class="service-btn" data-category="Car Services" data-subcategory="Maintenance Packages">View Packages</a>
                         </div>
                     </div>
                 </div>
@@ -231,6 +237,95 @@
         </div>
     </section>
 
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+            
+            // Handle the one maintenance packages link that goes to a different page
+            const maintenanceLink = document.querySelector('[href="maintenance-packages.html"]');
+            if (maintenanceLink && maintenanceLink.hasAttribute('data-category')) {
+                maintenanceLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
