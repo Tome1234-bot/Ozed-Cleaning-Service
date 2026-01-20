@@ -1,0 +1,771 @@
+/* Universal Service Template CSS */
+/* Works for all service types: appliance repair, gardening, pest control, plumbing, */
+/* dry cleaning, regular cleaning, car repair, electrical, waste removal */
+
+:root {
+  /* Dynamic color variables - can be overridden by service-specific themes */
+  --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --secondary-gradient: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-color) 100%);
+  --accent-color: var(--primary-color);
+  --light-accent: var(--light-color);
+  --dark-color: #2C3E50;
+  --medium-dark: #34495E;
+  --text-color: #333;
+  --text-light: #666;
+  --white: #fff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+  
+  /* Default colors (Appliance Repair theme) */
+  --primary-color: #2a5298;
+  --secondary-color: #1e3c72;
+  --light-color: #4d7cff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--light-accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 90px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: rgb(7, 7, 7);
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.main-header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.logo-highlight { color: #007bff; }
+
+/* Navigation Desktop */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.nav-link:hover, .nav-link.active { color: #007bff; }
+
+/* Dropdown Logic (Desktop) */
+.dropdown { 
+    position: relative; 
+}
+
+.dropdown > .nav-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 220px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: none;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover { 
+    background: #f8f9fa; 
+    color: #007bff; 
+}
+
+/* Show dropdown on hover (Desktop) */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2d7dd2 0%, #1a5ca3 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(45, 125, 210, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(45, 125, 210, 0.3);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+}
+
+/* Hero section */
+ .hero {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 50vh;
+            padding: 10px 100px;
+            background: rgb(255, 255, 255);
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* Flex containers */
+        .hero-flex1 {
+            flex: 1;
+            min-width: 300px;
+            max-width: 650px;
+        }
+        
+        .hero-flex2 {
+            flex: 1;
+            min-width: 300px;
+            max-width: 670px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Hero text content */
+        .hero-flex1 h1 {
+            font-size: 1.5rem;
+            color: #1a365d;
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+        
+        /* Hero list */
+        .hero-list {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .hero-list i {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            color: #2d7dd2;
+            padding: 12px 10px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #2d7dd2;
+        }
+        
+        .hero-list i:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+  .hero-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+
+        
+        .icon-text {
+            font-size: 1rem;
+            color: #000000;
+            font-weight: 400;
+            margin: 0;
+        }
+
+/* Button container */
+.hero-btns {
+  margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  font-size: .4rem;
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb, 106, 17, 203), 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+  color: var(--button-text, white);
+}
+
+.btn-large {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+/* Image container */
+.hero-flex2 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Trust Section */
+.trust-section {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.trust-rating {
+  background: var(--light-gray);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+}
+
+.trust-rating h3{
+  font-size: 1rem;
+  font-weight: 500;
+}
+.rating-stars {
+  color: #FFD700;
+  font-size: .7rem;
+  margin: 2px;
+}
+
+.rating-stars i {
+  background: black;
+  border-radius: 1px;
+  padding: 5px;
+}
+
+.rating-text {
+  font-weight: 700;
+  font-size: .8rem;
+  margin-bottom: 5px;
+}
+
+.rating-count {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.services-grid {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.service-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Category Title */
+.category-title {
+  font-size: 2.5rem;
+  color: var(--dark-color);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--accent-color);
+  position: relative;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--light-accent);
+}
+
+/* Services Wrapper */
+.services-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Image */
+.service-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img img {
+  transform: scale(1.05);
+}
+
+/* Service Content */
+.service-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-content h3 {
+  color: var(--dark-color);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.service-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Service Button */
+.service-btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--button-text, white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent-color);
+  align-self: flex-start;
+}
+
+.service-btn:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 20px;
+        display: none;
+        background: #f8f9fa;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .nav-link {
+        padding: 10px 0;
+        display: block;
+        font-size: 1.1rem;
+    }
+    
+    /* Book Now button in mobile menu */
+    .mobile-book-now {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .header-actions .btn-primary {
+        display: none;
+    }
+  .hero {
+    padding: 10px 50px;
+  }
+  
+  .nav-item {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 10px 20px;
+    flex-direction: column;
+  }
+  
+  .hero-flex1, .hero-flex2 {
+    max-width: 100%;
+  }
+  
+  .header-content {
+    flex-wrap: wrap;
+  }
+  
+  .main-nav {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+    display: none;
+  }
+  
+  .main-nav.active {
+    display: flex;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .services-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .category-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 10px 15px;
+  }
+  
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .phone-number {
+    font-size: 0.9rem;
+  }
+  
+  .services-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Service-Specific Theme Overrides */
+/* To use these themes, add a class to the body element */
+
+/* Appliance Repair Theme (Default) */
+body.appliance-repair {
+  --primary-color: #2a5298;
+  --secondary-color: #1e3c72;
+  --light-color: #4d7cff;
+  --dark-color: #1a1a2e;
+}
+
+/* Gardening Theme */
+body.gardening {
+  --primary-color: #2e7d32;
+  --secondary-color: #1b5e20;
+  --light-color: #4caf50;
+  --dark-color: #1b5e20;
+}
+
+/* Pest Control Theme */
+body.pest-control {
+  --primary-color: #B22222;
+  --secondary-color: #8B0000;
+  --light-color: #DC143C;
+  --dark-color: #2c3e50;
+}
+
+/* Plumbing Theme */
+body.plumbing {
+  --primary-color: #0077b6;
+  --secondary-color: #023e8a;
+  --light-color: #48cae4;
+  --dark-color: #023e8a;
+}
+
+/* Dry Cleaning Theme */
+body.dry-cleaning {
+  --primary-color: #6a11cb;
+  --secondary-color: #3a0ca3;
+  --light-color: #4cc9f0;
+  --dark-color: #3a0ca3;
+  --button-text: white;
+}
+
+/* Regular Cleaning Theme */
+body.regular-cleaning {
+  --primary-color: #00b4d8;
+  --secondary-color: #0077b6;
+  --light-color: #48cae4;
+  --dark-color: #0077b6;
+}
+
+/* Car Repair Theme */
+body.car-repair {
+  --primary-color: #FF6B35;
+  --secondary-color: #E4572E;
+  --light-color: #FF9B71;
+  --dark-color: #2C3E50;
+}
+
+/* Electrical Theme */
+body.electrical {
+  --primary-color: #FFD700;
+  --secondary-color: #FFA500;
+  --light-color: #FFE44D;
+  --dark-color: #2C3E50;
+  --button-text: #000000;
+}
+
+/* Waste Removal Theme */
+body.waste-removal {
+  --primary-color: #2E8B57;
+  --secondary-color: #228B22;
+  --light-color: #66CDAA;
+  --dark-color: #228B22;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .main-header {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .btn, .service-btn, .mobile-menu-toggle {
+    display: none !important;
+  }
+  
+  .service-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>AutoCare Pro - Car Repair & Maintenance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="car-repair">
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/logo.jpg" alt="Ozed Cleaning Services Logo" class="logo-img">
+                    <a href="index.html" class="logo-text">Ozed<span class="logo-highlight">Cleaning</span></a>
+                </div>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cleaning.html">Cleaning</a></li>
+                                <li><a href="gardening-service.html">Gardening</a></li>
+                                <li><a href="removals-service.html">Waste Removal</a></li>
+                                <li><a href="electrical-service.html">Electrical Services</a></li>
+                                <li><a href="plumbing-service.html">Plumbing & Heating</a></li>
+                                <li><a href="pest-control-service.html">Pest Control</a></li>
+                                <li><a href="appliance-repair-service.html">Appliance Repair</a></li>
+                                <li><a href="dry-cleaning-service.html">Dry Cleaning & Laundry</a></li>
+                                <li><a href="car-service.html">Mobile Car Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
+                        <!-- Mobile Book Now Button -->
+                        <li class="nav-item mobile-book-now">
+                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-flex1">
+            <h1>Professional Auto Repair & Maintenance Services You Can Trust</h1>
+            <ul class="hero-list">
+                <li class="hero-item"> 
+                    <i class="fas fa-clock"></i> 
+                    <span class="icon-text">Same-day service for most repairs</span> 
+                </li>
+                <li class="hero-item"> 
+                    <i class="fas fa-user-check"></i> 
+                    <span class="icon-text">ASE-certified master technicians</span> 
+                </li>
+                <li class="hero-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="icon-text">12-month/12,000-mile warranty on repairs</span> 
+                </li>
+                <li class="hero-item">
+                    <i class="fas fa-truck-pickup"></i>
+                    <span class="icon-text">Free courtesy shuttle service available</span> 
+                </li>
+                <li class="hero-item">
+                    <i class="fas fa-car"></i>
+                    <span class="icon-text">All makes & models - domestic & import</span> 
+                </li>
+            </ul>
+
+            <div class="hero-btns">
+                <a href="services.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                    <span>Schedule Your Service Now</span>
+                </a>
+            </div>
+            
+            <div class="trust-section">
+                <div class="trust-rating">
+                    <h3>Trusted Mechanics</h3>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>4.8/5 from <strong>3,500+ satisfied customers</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-flex2">
+            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600" alt="Professional auto repair technician at work">
+        </div>
+    </section>
+
+    <section class="services-grid">
+        <div class="service-categories">
+            <!-- Maintenance Services -->
+            <div class="service-category">
+                <h2 class="category-title">Preventive Maintenance Services</h2>
+                <div class="services-wrapper">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Oil Change Service">
+                        </div>
+                        <div class="service-content">
+                            <h3>OIL CHANGE & LUBRICATION</h3>
+                            <p>Complete oil change service with premium synthetic or conventional oil, oil filter replacement, and multi-point vehicle inspection.</p>
+                            <a href="form.html" class="service-btn">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1563720223484-21c6c2d3c487?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Brake Service">
+                        </div>
+                        <div class="service-content">
+                            <h3>BRAKE INSPECTION & REPAIR</h3>
+                            <p>Comprehensive brake inspection, pad/shoe replacement, rotor resurfacing, brake fluid flush, and complete brake system service.</p>
+                            <a href="form.html" class="service-btn">Schedule Service</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1563720223484-21c6c2d3c487?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Tire Service">
+                        </div>
+                        <div class="service-content">
+                            <h3>TIRE SERVICES & ROTATION</h3>
+                            <p>Tire rotation, balancing, alignment, pressure checks, and replacement. We carry all major tire brands for optimal performance and safety.</p>
+                            <a href="form.html" class="service-btn">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repair Services -->
+            <div class="service-category">
+                <h2 class="category-title">Auto Repair Services</h2>
+                <div class="services-wrapper">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Engine Repair">
+                        </div>
+                        <div class="service-content">
+                            <h3>ENGINE DIAGNOSTICS & REPAIR</h3>
+                            <p>Advanced engine diagnostics, tune-ups, sensor replacement, timing belt service, and complete engine repair for optimal performance.</p>
+                            <a href="form.html" class="service-btn">Schedule Now</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1494976388901-750342ad5036?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Transmission Service">
+                        </div>
+                        <div class="service-content">
+                            <h3>TRANSMISSION SERVICES</h3>
+                            <p>Automatic and manual transmission repair, fluid flush, clutch replacement, and transmission rebuild services for smooth shifting.</p>
+                            <a href="form.html" class="service-btn">Get Estimate</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Electrical Repair">
+                        </div>
+                        <div class="service-content">
+                            <h3>ELECTRICAL SYSTEM REPAIR</h3>
+                            <p>Battery testing/replacement, alternator repair, starter service, wiring diagnostics, and complete electrical system troubleshooting.</p>
+                            <a href="form.html" class="service-btn">Book Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialty Services -->
+            <div class="service-category">
+                <h2 class="category-title">Specialty & Additional Services</h2>
+                <div class="services-wrapper">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="AC Service">
+                        </div>
+                        <div class="service-content">
+                            <h3>A/C & HEATING SERVICES</h3>
+                            <p>Complete air conditioning service including refrigerant recharge, compressor repair, heater core service, and climate control diagnostics.</p>
+                            <a href="form.html" class="service-btn">Schedule Now</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1563720223484-21c6c2d3c487?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Suspension Service">
+                        </div>
+                        <div class="service-content">
+                            <h3>SUSPENSION & STEERING</h3>
+                            <p>Shock/strut replacement, alignment services, steering rack repair, ball joint replacement, and complete suspension system service.</p>
+                            <a href="form.html" class="service-btn">Get Quote</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1494976388901-750342ad5036?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=400" alt="Maintenance Plans">
+                        </div>
+                        <div class="service-content">
+                            <h3>MAINTENANCE PACKAGES</h3>
+                            <p>Cost-effective maintenance packages for regular service intervals. Keep your vehicle running smoothly with our scheduled maintenance plans.</p>
+                            <a href="maintenance-packages.html" class="service-btn">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
