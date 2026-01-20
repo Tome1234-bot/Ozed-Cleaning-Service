@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 
@@ -44,7 +50,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Pest Control" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -85,7 +91,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Pest Control" data-subcategory="Free Inspection">
                     <i class="fas fa-phone-alt" aria-hidden="true"></i>
                     <span>Schedule Free Inspection Today</span>
                 </a>
@@ -124,7 +130,7 @@
                         <div class="service-content">
                             <h3>GENERAL PEST CONTROL</h3>
                             <p>Comprehensive treatment for common household pests including ants, spiders, cockroaches, silverfish, and earwigs. Regular maintenance plans available.</p>
-                            <a href="general-pest.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="General Pest Control">Get Now</a>
                         </div>
                     </div>
 
@@ -135,7 +141,7 @@
                         <div class="service-content">
                             <h3>RODENT CONTROL & EXCLUSION</h3>
                             <p>Professional rodent removal, trapping, and exclusion services to eliminate mice and rats and prevent future infestations with guaranteed results.</p>
-                            <a href="rodent-control.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Rodent Control & Exclusion">Schedule Service</a>
                         </div>
                     </div>
 
@@ -146,7 +152,7 @@
                         <div class="service-content">
                             <h3>BED BUG TREATMENT</h3>
                             <p>Effective bed bug elimination using heat treatment, chemical applications, and follow-up inspections. Complete eradication guaranteed.</p>
-                            <a href="bed-bugs.html" class="service-btn">Emergency Service</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Bed Bug Treatment">Emergency Service</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +169,7 @@
                         <div class="service-content">
                             <h3>COMMERCIAL PEST CONTROL</h3>
                             <p>Customized pest management programs for restaurants, offices, warehouses, and retail spaces. Compliance with health and safety regulations.</p>
-                            <a href="commercial.html" class="service-btn">Business Solutions</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Commercial Pest Control">Business Solutions</a>
                         </div>
                     </div>
 
@@ -174,7 +180,7 @@
                         <div class="service-content">
                             <h3>TERMITE INSPECTION & CONTROL</h3>
                             <p>Comprehensive termite inspections, baiting systems, liquid treatments, and preventive measures to protect your property from structural damage.</p>
-                            <a href="termites.html" class="service-btn">Free Inspection</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Termite Inspection & Control">Schedule Inspection</a>
                         </div>
                     </div>
 
@@ -185,7 +191,7 @@
                         <div class="service-content">
                             <h3>MOSQUITO & FLY CONTROL</h3>
                             <p>Seasonal mosquito and fly control treatments for yards, patios, and outdoor living areas. Enjoy your outdoor space pest-free.</p>
-                            <a href="mosquito-control.html" class="service-btn">Seasonal Protection</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Mosquito & Fly Control">Schedule Service</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +208,7 @@
                         <div class="service-content">
                             <h3>PREVENTIVE TREATMENTS</h3>
                             <p>Regular maintenance programs to prevent pest infestations before they start. Quarterly, bi-annual, and annual plans available for complete protection.</p>
-                            <a href="preventive.html" class="service-btn">View Plans</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Preventive Treatments">Order Now</a>
                         </div>
                     </div>
 
@@ -213,7 +219,7 @@
                         <div class="service-content">
                             <h3>WILDLIFE REMOVAL</h3>
                             <p>Humane removal of raccoons, squirrels, bats, birds, and other wildlife from attics, crawl spaces, and other areas of your home or business.</p>
-                            <a href="wildlife.html" class="service-btn">Learn More</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Wildlife Removal">Order Service</a>
                         </div>
                     </div>
 
@@ -224,7 +230,7 @@
                         <div class="service-content">
                             <h3>GREEN PEST SOLUTIONS</h3>
                             <p>Eco-friendly pest control options using natural, organic, and low-toxicity products that are safe for children, pets, and the environment.</p>
-                            <a href="green-solutions.html" class="service-btn">Eco Options</a>
+                            <a href="form.html" class="service-btn" data-category="Pest Control" data-subcategory="Green Pest Solutions">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -232,6 +238,79 @@
         </div>
     </section>
 
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
