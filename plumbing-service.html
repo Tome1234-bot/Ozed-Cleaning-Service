@@ -11,6 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Category tracking script */
+        .service-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 
@@ -44,7 +50,7 @@
                         <li class="nav-item"><a href="order.html" class="nav-link">Premium Feature</a></li>
                         <!-- Mobile Book Now Button -->
                         <li class="nav-item mobile-book-now">
-                            <a href="form.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="form.html" class="btn btn-primary btn-large" data-category="Plumbing & Heating" data-subcategory="General Inquiry">Book Now</a>
                         </li>
                     </ul>
                 </nav>
@@ -85,7 +91,7 @@
             </ul>
 
             <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary btn-large">
+                <a href="form.html" class="btn btn-primary btn-large" data-category="Plumbing & Heating" data-subcategory="Emergency Service">
                     <i class="fas fa-phone-alt" aria-hidden="true"></i>
                     <span>Call Now for Immediate Service</span>
                 </a>
@@ -124,7 +130,7 @@
                         <div class="service-content">
                             <h3>LEAK DETECTION & REPAIR</h3>
                             <p>Professional leak detection using advanced equipment. We repair pipe leaks, faucet drips, toilet leaks, and hidden water leaks to prevent water damage.</p>
-                            <a href="leak-repair.html" class="service-btn">Emergency Call</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Leak Detection & Repair">Emergency Call</a>
                         </div>
                     </div>
 
@@ -135,7 +141,7 @@
                         <div class="service-content">
                             <h3>DRAIN CLEANING & CLOGGED DRAINS</h3>
                             <p>Expert drain cleaning services for sinks, showers, tubs, and main sewer lines. We use hydro-jetting and snake techniques for thorough cleaning.</p>
-                            <a href="drain-cleaning.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Drain Cleaning & Clogged Drains">Schedule Service</a>
                         </div>
                     </div>
 
@@ -146,7 +152,7 @@
                         <div class="service-content">
                             <h3>WATER HEATER SERVICES</h3>
                             <p>Repair, maintenance, and installation of tank and tankless water heaters. We service all brands and provide emergency hot water restoration.</p>
-                            <a href="water-heater.html" class="service-btn">Get Help Now</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Water Heater Services">Get Help Now</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +169,7 @@
                         <div class="service-content">
                             <h3>PLUMBING FIXTURE INSTALLATION</h3>
                             <p>Professional installation of sinks, faucets, toilets, showers, tubs, and bidets. We ensure proper fit, function, and water efficiency.</p>
-                            <a href="fixture-installation.html" class="service-btn">Get Quote</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Plumbing Fixture Installation">Get Quote</a>
                         </div>
                     </div>
 
@@ -174,7 +180,7 @@
                         <div class="service-content">
                             <h3>PIPE REPLACEMENT & REPAIR</h3>
                             <p>Complete pipe repair and replacement services including copper, PVC, PEX, and galvanized pipes. We handle both interior and exterior plumbing.</p>
-                            <a href="pipe-replacement.html" class="service-btn">Schedule Service</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Pipe Replacement & Repair">Schedule Service</a>
                         </div>
                     </div>
 
@@ -185,7 +191,7 @@
                         <div class="service-content">
                             <h3>GARBAGE DISPOSAL SERVICES</h3>
                             <p>Installation, repair, and replacement of garbage disposals. We service all major brands and provide troubleshooting for common issues.</p>
-                            <a href="garbage-disposal.html" class="service-btn">Repair Now</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Garbage Disposal Services">Repair Now</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +208,7 @@
                         <div class="service-content">
                             <h3>SEWER & MAIN LINE SERVICES</h3>
                             <p>Complete sewer line inspection, cleaning, repair, and replacement. We handle tree root intrusion, blockages, and damaged sewer lines.</p>
-                            <a href="sewer-services.html" class="service-btn">Emergency Service</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Sewer & Main Line Services">Emergency Service</a>
                         </div>
                     </div>
 
@@ -213,7 +219,7 @@
                         <div class="service-content">
                             <h3>WATER PRESSURE DIAGNOSIS</h3>
                             <p>Comprehensive water pressure testing and diagnosis. We identify causes of low or high water pressure and provide effective solutions.</p>
-                            <a href="water-pressure.html" class="service-btn">Schedule Inspection</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Water Pressure Diagnosis">Schedule Inspection</a>
                         </div>
                     </div>
 
@@ -224,7 +230,7 @@
                         <div class="service-content">
                             <h3>PREVENTIVE MAINTENANCE PLANS</h3>
                             <p>Regular plumbing inspections and maintenance to prevent emergencies. Our plans include drain cleaning, leak checks, and water heater flushing.</p>
-                            <a href="maintenance-plans.html" class="service-btn">View Plans</a>
+                            <a href="form.html" class="service-btn" data-category="Plumbing & Heating" data-subcategory="Preventive Maintenance Plans">View Plans</a>
                         </div>
                     </div>
                 </div>
@@ -232,6 +238,79 @@
         </div>
     </section>
 
+    <script>
+        // Category and Subcategory Tracking Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all service buttons with data attributes
+            const serviceButtons = document.querySelectorAll('[data-category][data-subcategory]');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Prevent default navigation temporarily
+                    e.preventDefault();
+                    
+                    // Get category and subcategory from data attributes
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    // Store in sessionStorage
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    // Log for debugging
+                    console.log(`Category: ${category}, Subcategory: ${subcategory}`);
+                    
+                    // Navigate to the form page
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Handle the main hero button
+            const heroButton = document.querySelector('.hero-btns [data-category]');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Handle mobile book now button
+            const mobileBookNow = document.querySelector('.mobile-book-now [data-category]');
+            if (mobileBookNow) {
+                mobileBookNow.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+                    const subcategory = this.getAttribute('data-subcategory');
+                    
+                    sessionStorage.setItem('category', category);
+                    sessionStorage.setItem('subcategory', subcategory);
+                    
+                    window.location.href = this.getAttribute('href');
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('fa-times');
+                    this.classList.toggle('fa-bars');
+                });
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
